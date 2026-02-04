@@ -94,7 +94,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-baseurl: "/formal-math-reasoning.github.io"
+# baseurl: "/formal-math-reasoning.github.io"
 url-pretty: "formal-math-reasoning.github.io"
 
 # Add the website title to the title of every page
