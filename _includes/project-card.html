@@ -1,0 +1,13 @@
+<div class="project-card">
+  <span class="venue-badge">{{ include.venue }}</span>
+  <h3 class="card-title">{{ include.title }}</h3>
+  <p class="card-description">{{ include.description }}</p>
+  <div class="card-links">
+    {% if include.paper_url and include.paper_url != "#" %}
+    <a href="{{ include.paper_url }}" class="card-link" target="_blank" rel="noopener">Paper ↗</a>
+    {% endif %}
+    {% if include.code_url and include.code_url != "#" %}
+    <a href="{{ include.code_url }}" class="card-link" target="_blank" rel="noopener">Code ↗</a>
+    {% endif %}
+  </div>
+</div>

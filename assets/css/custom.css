@@ -1,0 +1,724 @@
+/* Formal Math Reasoning - Custom Styles */
+
+/* =============================================
+   CSS Variables
+   ============================================= */
+:root {
+  --accent-color: #A62639;
+  --accent-hover: #8C1F2F;
+  --accent-light: rgba(166, 38, 57, 0.08);
+  --bg-off-white: #FAFAFA;
+  --card-gradient-start: #F8F6F3;
+  --card-gradient-end: #F5F7FA;
+  --text-primary: #2D3748;
+  --text-secondary: #718096;
+  --border-color: #E2E8F0;
+  --hero-gradient-1: #1a1a2e;
+  --hero-gradient-2: #16213e;
+  --hero-gradient-3: #0f3460;
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* =============================================
+   Global Font Override
+   ============================================= */
+body,
+.navbar,
+.footer,
+h1, h2, h3, h4, h5, h6,
+p, a, span, div,
+.btn,
+input, textarea, select {
+  font-family: var(--font-family) !important;
+}
+
+/* Override Beautiful Jekyll default fonts */
+body {
+  font-family: var(--font-family) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family) !important;
+  font-weight: 600;
+}
+
+.navbar-brand,
+.nav-link {
+  font-family: var(--font-family) !important;
+}
+
+/* =============================================
+   Hero Section
+   ============================================= */
+.hero-section {
+  background: linear-gradient(135deg, var(--hero-gradient-1) 0%, var(--hero-gradient-2) 50%, var(--hero-gradient-3) 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+  padding: 4rem 1.5rem 4rem;
+  position: relative;
+  overflow: hidden;
+  /* Extend background behind navbar */
+  margin-top: -56px;
+  padding-top: calc(56px + 4rem);
+}
+
+/* Particle Network Canvas - contained within hero */
+.particle-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  display: inline-block;
+  background: var(--accent-color);
+  color: white !important;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 15px rgba(166, 38, 57, 0.3);
+}
+
+.hero-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px) scale(1.02);
+  text-decoration: none;
+  color: white !important;
+  box-shadow: 0 8px 25px rgba(166, 38, 57, 0.4);
+}
+
+.hero-cta:active {
+  transform: translateY(-1px) scale(0.98);
+  box-shadow: 0 2px 10px rgba(166, 38, 57, 0.3);
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  border: 2px solid rgba(255,255,255,0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cta-secondary:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.8);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.hero-cta-secondary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* Responsive hero */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    min-height: 85vh;
+  }
+
+  .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* =============================================
+   Section Styling
+   ============================================= */
+.section {
+  padding: 4rem 0;
+}
+
+.section-alt {
+  background: #ffffff;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+/* =============================================
+   About Section
+   ============================================= */
+.about-section {
+  padding: 3rem 0;
+  background: #ffffff;
+}
+
+.about-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+.about-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* =============================================
+   Publications Grid
+   ============================================= */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem;
+  padding: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =============================================
+   Project Card - Animated Hover Effect
+   ============================================= */
+.project-card {
+  background: linear-gradient(145deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.75rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Animated color sweep overlay */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--accent-color) 0%, #c23a4f 50%, var(--accent-hover) 100%);
+  transform: translateX(-101%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+/* Accent bar on left */
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color);
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(166, 38, 57, 0.2), 0 0 0 2px var(--accent-color);
+  border-color: transparent;
+}
+
+.project-card:active {
+  transform: translateY(-4px) scale(1.01);
+}
+
+.project-card:hover::before {
+  transform: translateX(0);
+}
+
+.project-card:hover::after {
+  opacity: 0;
+}
+
+/* Card content transitions for hover */
+.project-card .venue-badge,
+.project-card .card-title,
+.project-card .card-description,
+.project-card .card-link {
+  position: relative;
+  z-index: 2;
+  transition: color 0.3s ease 0.1s;
+}
+
+.project-card:hover .venue-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.project-card:hover .card-title {
+  color: #ffffff;
+}
+
+.project-card:hover .card-description {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.project-card:hover .card-link {
+  color: #ffffff;
+}
+
+.venue-badge {
+  display: inline-block;
+  background: var(--accent-light);
+  color: var(--accent-color);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: 9999px;
+  margin-bottom: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.card-description {
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+  font-weight: 400;
+}
+
+.card-links {
+  display: flex;
+  gap: 1.25rem;
+  margin-top: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.card-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  background: transparent;
+  transition: color 0.3s ease, background 0.3s ease, transform 0.2s ease;
+}
+
+.card-link:hover {
+  text-decoration: none;
+  background: var(--accent-light);
+  transform: translateX(3px);
+}
+
+.project-card:hover .card-link {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.project-card:hover .card-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(4px);
+}
+
+/* =============================================
+   Tools Section
+   ============================================= */
+.tools-section {
+  background: var(--bg-off-white);
+}
+
+.tool-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle accent line on left */
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--accent-color);
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+  transform-origin: bottom;
+}
+
+.tool-card:hover {
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  border-color: var(--accent-color);
+  transform: translateY(-4px);
+}
+
+.tool-card:hover::before {
+  transform: scaleY(1);
+}
+
+.tool-card:active {
+  transform: translateY(-2px);
+}
+
+.tool-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.tool-info {
+  flex: 1;
+}
+
+.tool-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+.tool-description {
+  color: var(--text-secondary);
+  font-size: 0.925rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.tool-cta {
+  background: var(--accent-color);
+  color: white !important;
+  padding: 0.625rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, gap 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 12px rgba(166, 38, 57, 0.25);
+}
+
+.tool-cta::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.tool-cta:hover {
+  background: var(--accent-hover);
+  transform: translateY(-3px);
+  text-decoration: none;
+  color: white !important;
+  box-shadow: 0 8px 20px rgba(166, 38, 57, 0.35);
+  gap: 0.75rem;
+}
+
+.tool-cta:hover::after {
+  transform: translateX(3px);
+}
+
+.tool-cta:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(166, 38, 57, 0.25);
+}
+
+/* Responsive tool cards */
+@media (max-width: 640px) {
+  .tool-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .tool-info {
+    text-align: center;
+  }
+}
+
+/* =============================================
+   Layout Utilities
+   ============================================= */
+.container-narrow {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Override default page margins for landing page */
+body.landing-page .intro-header {
+  display: none;
+}
+
+body.landing-page main {
+  margin-top: 0;
+}
+
+/* =============================================
+   Navbar Enhancements - Transparent to Solid
+   ============================================= */
+.navbar.navbar-custom {
+  font-weight: 500;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Default transparent state for landing page (before JS adds classes) */
+body.landing-page .navbar.navbar-custom {
+  background-color: transparent !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+body.landing-page .navbar.navbar-custom .navbar-brand,
+body.landing-page .navbar.navbar-custom .nav-link {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover handled in enhanced nav-link styles below */
+
+body.landing-page .navbar.navbar-custom .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Transparent navbar state (same as default, for JS toggle) */
+body.landing-page .navbar.navbar-custom.navbar-transparent {
+  background-color: transparent !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+/* Force remove navbar-light styles on transparent */
+body.landing-page .navbar.navbar-custom.navbar-transparent.navbar-light .navbar-brand,
+body.landing-page .navbar.navbar-custom.navbar-transparent.navbar-light .nav-link,
+body.landing-page .navbar.navbar-custom.navbar-transparent .navbar-brand,
+body.landing-page .navbar.navbar-custom.navbar-transparent .nav-link {
+  color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Transparent hover handled in enhanced nav-link styles below */
+
+/* Hamburger icon white on transparent */
+body.landing-page .navbar.navbar-custom.navbar-transparent .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+/* Scrolled state - solid white */
+body.landing-page .navbar.navbar-custom.navbar-scrolled {
+  background-color: #ffffff !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.landing-page .navbar.navbar-custom.navbar-scrolled .navbar-brand,
+body.landing-page .navbar.navbar-custom.navbar-scrolled .nav-link {
+  color: var(--text-primary) !important;
+  text-shadow: none !important;
+}
+
+/* Scrolled hover handled in enhanced nav-link styles below */
+
+/* Hamburger icon dark on scrolled */
+body.landing-page .navbar.navbar-custom.navbar-scrolled .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(45, 55, 72, 0.95)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+
+.navbar-brand {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.02);
+}
+
+/* Nav link base styles with animated underline */
+.navbar-custom .nav-link {
+  font-weight: 500;
+  font-size: 0.925rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+/* Animated underline effect */
+.navbar-custom .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0.25rem;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease, left 0.3s ease;
+  border-radius: 1px;
+}
+
+.navbar-custom .nav-link:hover::after,
+.navbar-custom .nav-link:focus::after {
+  width: 80%;
+  left: 10%;
+}
+
+/* Landing page transparent state - white underline */
+body.landing-page .navbar.navbar-custom .nav-link::after {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+body.landing-page .navbar.navbar-custom .nav-link:hover,
+body.landing-page .navbar.navbar-custom .nav-link:focus {
+  color: #ffffff !important;
+  transform: translateY(-1px);
+}
+
+/* Landing page scrolled state - accent underline */
+body.landing-page .navbar.navbar-custom.navbar-scrolled .nav-link::after {
+  background: var(--accent-color);
+}
+
+body.landing-page .navbar.navbar-custom.navbar-scrolled .nav-link:hover,
+body.landing-page .navbar.navbar-custom.navbar-scrolled .nav-link:focus {
+  color: var(--accent-color) !important;
+  transform: translateY(-1px);
+}
+
+/* =============================================
+   Footer Adjustments
+   ============================================= */
+footer.footer {
+  background: var(--hero-gradient-1);
+}
+
+footer.footer a {
+  font-weight: 500;
+}
+
+/* =============================================
+   Smooth Scroll
+   ============================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for anchor links with fixed navbar */
+:target {
+  scroll-margin-top: 80px;
+}
+
+/* =============================================
+   Selection Color
+   ============================================= */
+::selection {
+  background: var(--accent-color);
+  color: white;
+}
+
+::-moz-selection {
+  background: var(--accent-color);
+  color: white;
+}

@@ -1,0 +1,4 @@
+- name: "LeanFlow"
+  icon: "zap"
+  description: "A Python interface for Lean 4 enabling programmatic interaction and proof verification."
+  github_url: "https://github.com/Formal-Math-Reasoning/leanflow"

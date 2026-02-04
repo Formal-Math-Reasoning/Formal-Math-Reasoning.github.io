@@ -1,0 +1,57 @@
+---
+layout: base
+body-class: landing-page
+---
+
+<div class="landing-page">
+  {% include hero.html %}
+
+  <section class="about-section">
+    <div class="container-narrow">
+      <div class="about-content">
+        <p class="about-text">
+          Our research sits at the intersection of <strong>Large Language Models</strong> and <strong>Formal Verification</strong>. LLMs have demonstrated remarkable fluency and creativity in natural language, but they often struggle with logical consistency and produce "hallucinations" in mathematical reasoning. Formal Verification, on the other hand, provides certainty through interactive theorem provers like Lean, yet suffers from a steep learning curve that limits accessibility. <strong>A core problem is one of translation</strong>: natural language needs to be converted into a machine-verifiable format.
+          <br><br>
+          We aim to build a bridge that combines the intuition and creativity of LLMs with the rigor and precision of Formal Verification. Our goal is to automatically translate natural language mathematical statements into machine-verifiable proofs, <strong>making mathematical knowledge both more accessible and more reliable</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications" class="section section-alt">
+    <div class="container-narrow">
+      <h2 class="section-title">Publications</h2>
+      <p class="section-subtitle">Our recent research on autoformalisation and formal reasoning</p>
+
+      <div class="projects-grid">
+        {% for pub in site.data.publications %}
+          {% include project-card.html
+            title=pub.title
+            venue=pub.venue
+            description=pub.description
+            paper_url=pub.paper_url
+            code_url=pub.code_url
+          %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <section id="tools" class="section tools-section">
+    <div class="container-narrow">
+      <h2 class="section-title">Tools</h2>
+      <p class="section-subtitle">Open-source software for formal mathematics</p>
+
+      {% for tool in site.data.tools %}
+        {% include tool-card.html
+          name=tool.name
+          icon=tool.icon
+          description=tool.description
+          github_url=tool.github_url
+        %}
+      {% endfor %}
+    </div>
+  </section>
+
+  {{ content }}
+</div>

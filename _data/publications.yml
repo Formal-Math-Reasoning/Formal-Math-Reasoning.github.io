@@ -1,0 +1,17 @@
+- title: "DRIFT"
+  venue: "ICLR 2026"
+  description: "Decomposing informal mathematical statements into smaller, more tractable sub-components improves autoformalisation performance, especially on out-of-distribution benchmarks."
+  paper_url: "https://arxiv.org/abs/2510.10815"
+  code_url: "#"
+
+- title: "TopoAlign"
+  venue: "Preprint"
+  description: "TopoAlign unlocks widely available code repositories as training resources for Math LLMs by structurally aligning code to formal mathematical statements."
+  paper_url: "https://arxiv.org/abs/2510.11944"
+  code_url: "#"
+
+- title: "Conjecturing"
+  venue: "Preprint"
+  description: "Conjecturing is an overlooked step in formal mathematical reasoning with LLMs. We introduce ConjectureBench to evaluate conjecture generation across three settings."
+  paper_url: "https://arxiv.org/abs/2510.11986"
+  code_url: "#"
